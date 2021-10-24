@@ -7,9 +7,10 @@ import sounddevice as sd
 import soundfile as sf
 import re
 
+key='key_069d3c61a7ce4adf9d4136e6c46d0be7'
+tokenId='tok_9dee93cae2e54688863186d14522da2e'
 
-
-my_voiceit = VoiceIt2('key_069d3c61a7ce4adf9d4136e6c46d0be7','tok_9dee93cae2e54688863186d14522da2e')
+my_voiceit = VoiceIt2(key,tokenId)
 user1 = my_voiceit.create_user()
 #print((user1))
 print(user1['userId'])
@@ -26,8 +27,8 @@ print("Please enroll your voice for the following phrases: ")
 print(phrases[0])
 count = 0
 while count<3:
-    samplerate = 44100  # Hertz
-    duration = 5  # seconds
+    samplerate = 42100  # More Synchronous Hertz
+    duration = 3  # seconds
     filename = 'try1.wav'
     print("Speak Now")
     mydata = sd.rec(int(samplerate * duration), samplerate=samplerate,
